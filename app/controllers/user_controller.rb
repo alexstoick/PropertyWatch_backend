@@ -1,10 +1,11 @@
 class UserController < ApplicationController
   def show
   	user = User.find(params[:id])
-  	render :json => user
+  	render :json => user.to_json( :only => :id , include: { :zones => { only: [:postcode,:id] } } )
   end
 
   def create
+  	render json: { "success" => true }
   end
 
   def update
