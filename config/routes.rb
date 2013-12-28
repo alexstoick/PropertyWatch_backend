@@ -1,4 +1,7 @@
 PropertyWatchBackend::Application.routes.draw do
+  get "user/show"
+  get "user/create"
+  get "user/update"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

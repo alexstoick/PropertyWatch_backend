@@ -1,0 +1,60 @@
+  [1m[36m (53.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (10.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20131228203909)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20131228203909)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20131228203909)
+  [1m[35m (40.7ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `deviceToken` varchar(255), `deviceType` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131228203909')
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateProperties (20131228204129)
+  [1m[35m (11.3ms)[0m  CREATE TABLE `properties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number_of_bedrooms` varchar(255), `number_of_bathrooms` varchar(255), `rent_a_week` varchar(255), `address` varchar(255), `street_name` varchar(255), `agentName` varchar(255), `agentPhoneNo` varchar(255), `imageUrl` varchar(255), `thumbnailUrl` varchar(255), `shortDescription` varchar(255), `detailsUrl` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131228204129')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateZones (20131228205010)
+  [1m[35m (14.2ms)[0m  CREATE TABLE `zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `postcode` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131228205010')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserWatchZones (20131228205030)
+  [1m[35m (5.7ms)[0m  CREATE TABLE `user_watch_zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `zone_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131228205030')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.4ms)[0m  INSERT INTO `users` (`created_at`, `updated_at`) VALUES ('2013-12-28 21:09:04', '2013-12-28 21:09:04')
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `deviceToken` = 'abc', `deviceType` = 'ios', `updated_at` = '2013-12-28 21:09:18' WHERE `users`.`id` = 1[0m
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `zones` (`created_at`, `updated_at`) VALUES ('2013-12-28 21:09:27', '2013-12-28 21:09:27')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `zones` SET `postcode` = 'WC1', `updated_at` = '2013-12-28 21:09:38' WHERE `zones`.`id` = 1[0m
+  [1m[35m (6.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `user_watch_zones` (`created_at`, `updated_at`) VALUES ('2013-12-28 21:09:48', '2013-12-28 21:09:48')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `user_watch_zones` SET `user_id` = 1, `zone_id` = 1, `updated_at` = '2013-12-28 21:10:01' WHERE `user_watch_zones`.`id` = 1[0m
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36mZone Load (6.3ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` INNER JOIN `user_watch_zones` ON `users`.`id` = `user_watch_zones`.`user_id` WHERE `user_watch_zones`.`zone_id` = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddZoneIdToProperty (20131228211211)
+  [1m[35m (27.2ms)[0m  ALTER TABLE `properties` ADD `zone_id` int(11)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131228211211')
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
