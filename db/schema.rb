@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131228211211) do
+ActiveRecord::Schema.define(version: 20131228223816) do
 
   create_table "properties", force: true do |t|
     t.string   "number_of_bedrooms"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20131228211211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "zone_id"
+    t.string   "description"
   end
 
   create_table "user_watch_zones", force: true do |t|

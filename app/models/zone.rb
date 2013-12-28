@@ -4,4 +4,6 @@ class Zone < ActiveRecord::Base
 
 	has_many :watchers, :class_name => "User" , :through => :user_watch_zone , :source => :user
 
+	has_many :properties
+
 end

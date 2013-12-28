@@ -1,13 +1,18 @@
 class UserController < ApplicationController
+
+  #GET user/:id
   def show
   	user = User.find(params[:id])
-  	render :json => user.to_json( :only => :id , include: { :zones => { only: [:postcode,:id] } } )
+  	render :json => user.to_json( only: :id , include: { zones: { only: [:postcode,:id] } } )
   end
 
+  #POST user/
   def create
-  	render json: { "success" => true }
+  	user = User.new( deviceToken: params[:deviceToken], deviceType: params[:deviceType])
+  	render json: user.to_json( :only => :id )
   end
 
+  #PATCH user/:id
   def update
 
   	user = User.find(params[:id])
@@ -15,6 +20,6 @@ class UserController < ApplicationController
 
   	userWatchZone = UserWatchZone.where( user_id: params[:id] , zone_id: new_zone.id ).first_or_create
 
-  	render :json => user
+  	render :json => user.to_json( only: :id , include: { zones: { only: [:postcode,:id] } } )
   end
 end
