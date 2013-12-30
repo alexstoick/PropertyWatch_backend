@@ -16,7 +16,7 @@ class UserController < ApplicationController
   def update
 
   	user = User.find(params[:id])
-  	new_zone = Zone.find_or_create_by( postcode: params[:zone])
+  	new_zone = Zone.where( postcode: params[:zone]).first_or_create
 
   	userWatchZone = UserWatchZone.where( user_id: params[:id] , zone_id: new_zone.id ).first_or_create
 

@@ -1031,3 +1031,296 @@ Processing by ZoneController#showProperties as HTML
   [1m[36mZone Load (0.4ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 1 LIMIT 1[0m
   [1m[35mProperty Load (0.3ms)[0m  SELECT `properties`.* FROM `properties` WHERE `properties`.`zone_id` = 1
 Completed 200 OK in 75ms (Views: 0.1ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2013-12-29 12:20:43 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (15.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.6ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2013-12-29 12:37:53 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2013-12-29 12:38:26 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/zone/1" for 127.0.0.1 at 2013-12-29 12:38:41 +0200
+Processing by ZoneController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` INNER JOIN `user_watch_zones` ON `users`.`id` = `user_watch_zones`.`user_id` WHERE `user_watch_zones`.`zone_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/zone/1/properties" for 127.0.0.1 at 2013-12-29 12:38:47 +0200
+Processing by ZoneController#showProperties as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mZone Load (0.4ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 1 LIMIT 1[0m
+  [1m[35mProperty Load (0.3ms)[0m  SELECT `properties`.* FROM `properties` WHERE `properties`.`zone_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2013-12-29 12:40:12 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.6ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:45:11 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:45:33 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:45:47 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:48:53 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/zone/1/properties" for 188.26.81.228 at 2013-12-29 12:49:11 +0200
+Processing by ZoneController#showProperties as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 1 LIMIT 1[0m
+  [1m[35mProperty Load (0.2ms)[0m  SELECT `properties`.* FROM `properties` WHERE `properties`.`zone_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:55:30 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:58:41 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 12:59:40 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:00:34 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:01:24 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:01:44 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:02:47 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:03:05 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.4ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:03:22 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:04:01 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.2ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 13:07:00 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mZone Load (0.3ms)[0m  SELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/zone/1/properties" for 188.26.81.228 at 2013-12-29 17:58:49 +0200
+Processing by ZoneController#showProperties as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 1 LIMIT 1[0m
+  [1m[35mProperty Load (0.2ms)[0m  SELECT `properties`.* FROM `properties` WHERE `properties`.`zone_id` = 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 20:03:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.4ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 141ms (Views: 0.1ms | ActiveRecord: 74.1ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 20:03:44 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.4ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 20:23:43 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 20:27:48 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-29 20:28:40 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.2ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-30 11:12:17 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.2ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2013-12-30 11:12:28 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-30 11:12:51 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.2ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-30 20:08:29 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.2ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/user/1" for 188.26.81.228 at 2013-12-30 20:08:36 +0200
+Processing by UserController#update as */*
+  Parameters: {"WC3"=>"zone", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (52.0ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`postcode` IS NULL LIMIT 1[0m
+  [1m[35m (33.3ms)[0m  BEGIN
+  [1m[36mSQL (30.4ms)[0m  [1mINSERT INTO `zones` (`created_at`, `updated_at`) VALUES ('2013-12-30 18:08:36', '2013-12-30 18:08:36')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mUserWatchZone Load (0.2ms)[0m  [1mSELECT `user_watch_zones`.* FROM `user_watch_zones` WHERE `user_watch_zones`.`user_id` = 1 AND `user_watch_zones`.`zone_id` = 3 ORDER BY `user_watch_zones`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `user_watch_zones` (`created_at`, `updated_at`, `user_id`, `zone_id`) VALUES ('2013-12-30 18:08:36', '2013-12-30 18:08:36', 1, 3)[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mZone Load (0.4ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 142ms (Views: 0.1ms | ActiveRecord: 118.6ms)
+
+
+Started GET "/user/1" for 188.26.81.228 at 2013-12-30 20:12:23 +0200
+Processing by UserController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.2ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2013-12-30 20:12:57 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mZone Load (0.3ms)[0m  [1mSELECT `zones`.* FROM `zones` INNER JOIN `user_watch_zones` ON `zones`.`id` = `user_watch_zones`.`zone_id` WHERE `user_watch_zones`.`user_id` = 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[36mZone Load (0.4ms)[0m  [1mSELECT `zones`.* FROM `zones` WHERE `zones`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (9.3ms)[0m  [1mUPDATE `zones` SET `postcode` = 'WC3', `updated_at` = '2013-12-30 18:14:04' WHERE `zones`.`id` = 3[0m
+  [1m[35m (0.3ms)[0m  COMMIT
