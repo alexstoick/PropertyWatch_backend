@@ -1,5 +1,5 @@
 class AddDescriptionToProperty < ActiveRecord::Migration
   def change
-    add_column :properties, :description, :string
+    add_column :properties, :description, :text
   end
 end

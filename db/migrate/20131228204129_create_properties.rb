@@ -1,16 +1,16 @@
 class CreateProperties < ActiveRecord::Migration
   def change
     create_table :properties do |t|
-      t.string :number_of_bedrooms
-      t.string :number_of_bathrooms
-      t.string :rent_a_week
+      t.integer :number_of_bedrooms
+      t.integer :number_of_bathrooms
+      t.integer :rent_a_week
       t.string :address
-      t.string :street_name
+      t.string :streetName
       t.string :agentName
       t.string :agentPhoneNo
       t.string :imageUrl
       t.string :thumbnailUrl
-      t.string :shortDescription
+      t.text :shortDescription
       t.string :detailsUrl
 
       t.timestamps

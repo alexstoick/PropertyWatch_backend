@@ -28,6 +28,11 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     builder (3.1.4)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    delayed_job_active_record (4.0.0)
+      activerecord (>= 3.0, < 4.1)
+      delayed_job (>= 3.0, < 4.1)
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.6.9)
@@ -81,6 +86,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  delayed_job_active_record
   jbuilder (~> 1.2)
   mysql2
   rails (= 4.0.0)
