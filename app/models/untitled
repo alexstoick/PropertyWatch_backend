@@ -1,0 +1,2 @@
+p = Property.where(detailsUrl: "http://www.zoopla.co.uk/to-rent/details/16531256?utm_source=v1:orWHECPMF0DT7Rn9Zex57mL0fRs8gbnb&utm_medium=api").first_or_initialize( streetName: "abc")
+

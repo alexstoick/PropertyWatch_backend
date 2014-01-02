@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231155825) do
+ActiveRecord::Schema.define(version: 20140102093658) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20131231155825) do
     t.integer  "number_of_bathrooms"
     t.integer  "rent_a_week"
     t.string   "address"
-    t.string   "street_name"
+    t.string   "streetName"
     t.string   "agentName"
     t.string   "agentPhoneNo"
     t.string   "imageUrl"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20131231155825) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
+  add_index "properties", ["detailsUrl"], name: "index_properties_on_detailsUrl", unique: true, using: :btree
 
   create_table "user_watch_zones", force: true do |t|
     t.integer  "user_id"
