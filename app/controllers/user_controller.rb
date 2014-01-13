@@ -18,8 +18,18 @@ class UserController < ApplicationController
 
   	user = User.find(params[:id])
   	new_zone = Zone.where( postcode: params[:zone]).first_or_create
+
     new_zone.processProperties
-  	userWatchZone = UserWatchZone.where( user_id: params[:id] , zone_id: new_zone.id ).first_or_create
+
+  	userWatchZone = UserWatchZone.where( user_id: params[:id] , zone_id: new_zone.id ).
+            first_or_initialize(
+                    min_rent: params[:min_rent] ,
+                    max_rent: params[:max_rent] ,
+                    min_bedrooms: params[:min_bedrooms] ,
+                    max_bedrooms: params[:max_bedrooms]
+                )
+
+    userWatchZone.save!
 
   	render json: user.to_json( only: :id , include: { zones: { only: [:postcode,:id] } } )
   end

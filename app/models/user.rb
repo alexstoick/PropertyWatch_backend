@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
 
 	has_many :zones, :through => :user_watch_zones
 
+	def send_notification (message)
+		puts "sending notification: #{message}"
+	end
+
 end
