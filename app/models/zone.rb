@@ -26,8 +26,8 @@ class Zone < ActiveRecord::Base
 
 		self.touch
 
-		#url = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=#{self.postcode}&api_key=4axhtay3kpj7y4397k2nb6a4&listing_status=rent&page_size=100&order_by=age"
-		url = "http://localhost/date.json"
+		url = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=#{self.postcode}&api_key=4axhtay3kpj7y4397k2nb6a4&listing_status=rent&page_size=100&order_by=age"
+		#url = "http://localhost/date.json"
 		response = open(url).read
 
 		jsonObject = JSON.parse ( response )

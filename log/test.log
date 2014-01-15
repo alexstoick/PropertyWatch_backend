@@ -1,0 +1,79 @@
+  [1m[36m (0.7ms)[0m  [1mDROP DATABASE IF EXISTS `propertyWatch_test`[0m
+  [1m[35m (0.8ms)[0m  CREATE DATABASE `propertyWatch_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE `delayed_jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `priority` int(11) DEFAULT 0 NOT NULL, `attempts` int(11) DEFAULT 0 NOT NULL, `handler` text NOT NULL, `last_error` text, `run_at` datetime, `locked_at` datetime, `failed_at` datetime, `locked_by` varchar(255), `queue` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (8.2ms)[0m  CREATE INDEX `delayed_jobs_priority` USING btree ON `delayed_jobs` (`priority`, `run_at`) 
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE `properties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number_of_bedrooms` int(11), `number_of_bathrooms` int(11), `rent_a_week` int(11), `address` varchar(255), `streetName` varchar(255), `agentName` varchar(255), `agentPhoneNo` varchar(255), `imageUrl` varchar(255), `thumbnailUrl` varchar(255), `shortDescription` text, `detailsUrl` varchar(255), `created_at` datetime, `updated_at` datetime, `zone_id` int(11), `description` text, `latitude` float, `longitude` float) ENGINE=InnoDB[0m
+  [1m[35m (8.1ms)[0m  CREATE UNIQUE INDEX `index_properties_on_detailsUrl` USING btree ON `properties` (`detailsUrl`) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE `user_watch_zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `zone_id` int(11), `created_at` datetime, `updated_at` datetime, `min_rent` int(11), `max_rent` int(11), `min_bedrooms` int(11), `max_bedrooms` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `deviceToken` varchar(255), `deviceType` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE `zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `postcode` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (6.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140105100409')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131228204129')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131228211211')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131228205030')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131231155825')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131228223816')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131228203909')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131231104023')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131228205010')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140102093658')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `properties`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)[0m
+Mysql2::Error: Unknown column 'number_of_bedrooms,' in 'field list': INSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM `properties`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)
+Mysql2::Error: Unknown column 'number_of_bedrooms,' in 'field list': INSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM `properties`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)[0m
+Mysql2::Error: Unknown column 'number_of_bedrooms,' in 'field list': INSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM `properties`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)
+Mysql2::Error: Unknown column 'number_of_bedrooms,' in 'field list': INSERT INTO `properties` (`number_of_bedrooms,`, `number_of_bathrooms,`, `rent_a_week,`, `address,`, `street_name,`, `agentName,`, `agentPhoneNo,`, `imageUrl,`, `thumbnailUrl,`, `shortDescription,`, `detailsUrl`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2014-01-15 15:11:11', '2014-01-15 15:11:11', 980190962)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (5.6ms)[0m  [1mDROP DATABASE IF EXISTS `propertyWatch_test`[0m
+  [1m[35m (0.3ms)[0m  CREATE DATABASE `propertyWatch_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE `delayed_jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `priority` int(11) DEFAULT 0 NOT NULL, `attempts` int(11) DEFAULT 0 NOT NULL, `handler` text NOT NULL, `last_error` text, `run_at` datetime, `locked_at` datetime, `failed_at` datetime, `locked_by` varchar(255), `queue` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (7.8ms)[0m  CREATE INDEX `delayed_jobs_priority` USING btree ON `delayed_jobs` (`priority`, `run_at`) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE `properties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number_of_bedrooms` int(11), `number_of_bathrooms` int(11), `rent_a_week` int(11), `address` varchar(255), `streetName` varchar(255), `agentName` varchar(255), `agentPhoneNo` varchar(255), `imageUrl` varchar(255), `thumbnailUrl` varchar(255), `shortDescription` text, `detailsUrl` varchar(255), `created_at` datetime, `updated_at` datetime, `zone_id` int(11), `description` text, `latitude` float, `longitude` float) ENGINE=InnoDB[0m
+  [1m[35m (13.9ms)[0m  CREATE UNIQUE INDEX `index_properties_on_detailsUrl` USING btree ON `properties` (`detailsUrl`) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE `user_watch_zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `zone_id` int(11), `created_at` datetime, `updated_at` datetime, `min_rent` int(11), `max_rent` int(11), `min_bedrooms` int(11), `max_bedrooms` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `deviceToken` varchar(255), `deviceType` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE `zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `postcode` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (27.7ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140105100409')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131228204129')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131228211211')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131228205030')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131231155825')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131228223816')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131228203909')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131231104023')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131228205010')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140102093658')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m

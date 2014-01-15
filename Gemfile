@@ -9,3 +9,5 @@ gem 'jbuilder', '~> 1.2'
 gem 'mysql2'
 
 gem 'delayed_job_active_record'
+
+gem 'puma'
